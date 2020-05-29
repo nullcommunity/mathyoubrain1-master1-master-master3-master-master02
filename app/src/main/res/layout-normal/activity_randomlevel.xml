@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1B1B"
+    tools:context=".randomLevel">
+
+    <TextView
+        android:id="@+id/QuestionText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="376dp"
+        android:gravity="center"
+        android:text="Question here..."
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:fontFamily="@font/consola"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="30s"
+        android:textColor="#F8F7F7"
+        android:textSize="24sp"
+        app:fontFamily="@font/consola"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/flipbtn"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987"
+        app:srcCompat="@drawable/bulb" />
+
+    <ImageView
+        android:id="@+id/back_card"
+        android:layout_width="212dp"
+        android:layout_height="218dp"
+        android:layout_marginTop="72dp"
+        android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/QuestionText"
+        app:srcCompat="@drawable/tips" />
+
+    <GridLayout
+        android:id="@+id/front_card"
+        android:layout_width="212dp"
+        android:layout_height="218dp"
+        android:layout_marginTop="72dp"
+        android:alpha="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/QuestionText">
+
+        <Button
+            android:id="@+id/firstOption"
+            android:layout_width="107dp"
+            android:layout_height="107dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/firstoption"
+            android:onClick="play"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/secondOption"
+            android:layout_width="107dp"
+            android:layout_height="107dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/secondoption"
+            android:onClick="play"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/thirdOption"
+            android:layout_width="107dp"
+            android:layout_height="107dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/thirdoption"
+            android:onClick="play"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/fourthOption"
+            android:layout_width="107dp"
+            android:layout_height="107dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:background="@drawable/fourthoption"
+            android:onClick="play"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/userScore"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="0/10"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:fontFamily="@font/consola"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="123dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="1"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#FFFF"
+        android:textSize="24sp"
+        app:fontFamily="@font/consola"
+        app:layout_constraintBottom_toBottomOf="@+id/flipbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752" />
+
+    <TextView
+        android:id="@+id/textViewLevel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="Level 1"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:fontFamily="@font/consola"
+        app:layout_constraintEnd_toStartOf="@+id/userScore"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toEndOf="@+id/timerText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewResult"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/back_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/QuestionText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
