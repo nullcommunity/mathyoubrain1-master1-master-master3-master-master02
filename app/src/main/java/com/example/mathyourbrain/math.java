@@ -25,7 +25,7 @@ public class math {
         public static void askQuestionandGiveOptions () {
             math.generateNumberOfElements();
             String Question1 = math.generateQuestion();
-            String Question2 = (Question1.replace('*', '×') + " = ?").replace('/', '÷');
+            String Question2 = (Question1.replace('*', '×') + "= ?").replace('/', '÷');
             randomLevel.QuestionText.setText(Question2);
             try {
                 math.generateAnswer(Question1);
