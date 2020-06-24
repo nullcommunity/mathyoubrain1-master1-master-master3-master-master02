@@ -17,69 +17,69 @@ public class LevelsActivity extends AppCompatActivity {
     Intent intent;
     static int level = 0;
     static Activity levelsActivity;
-    Button buttonlvl1,buttonlvl2,buttonlvl3,buttonlvl4,buttonlvl5,buttonlvl6,buttonlvl7,buttonlvl8,buttonlvl9,buttonlvl10;
+    Button buttonlvl1, buttonlvl2, buttonlvl3, buttonlvl4, buttonlvl5, buttonlvl6, buttonlvl7, buttonlvl8, buttonlvl9, buttonlvl10;
 
     boolean isButtonClicked = false;
 
     public void checkLevelState() {
 
-        if(HomeActivity.sharedPreferences.getBoolean("level 2 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 2 state", false) == false) {
             buttonlvl2.setAlpha(0.5f);
             buttonlvl2.setEnabled(false);
         } else {
             buttonlvl2.setAlpha(1f);
             buttonlvl2.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 3 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 3 state", false) == false) {
             buttonlvl3.setAlpha(0.5f);
             buttonlvl3.setEnabled(false);
         } else {
             buttonlvl3.setAlpha(1f);
             buttonlvl3.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 4 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 4 state", false) == false) {
             buttonlvl4.setAlpha(0.5f);
             buttonlvl4.setEnabled(false);
         } else {
             buttonlvl4.setAlpha(1f);
             buttonlvl4.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 5 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 5 state", false) == false) {
             buttonlvl5.setAlpha(0.5f);
             buttonlvl5.setEnabled(false);
         } else {
             buttonlvl5.setAlpha(1f);
             buttonlvl5.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 6 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 6 state", false) == false) {
             buttonlvl6.setAlpha(0.5f);
             buttonlvl6.setEnabled(false);
         } else {
             buttonlvl6.setAlpha(1f);
             buttonlvl6.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 7 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 7 state", false) == false) {
             buttonlvl7.setAlpha(0.5f);
             buttonlvl7.setEnabled(false);
         } else {
             buttonlvl7.setAlpha(1f);
             buttonlvl7.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 8 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 8 state", false) == false) {
             buttonlvl8.setAlpha(0.5f);
             buttonlvl8.setEnabled(false);
         } else {
             buttonlvl8.setAlpha(1f);
             buttonlvl8.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 9 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 9 state", false) == false) {
             buttonlvl9.setAlpha(0.5f);
             buttonlvl9.setEnabled(false);
         } else {
             buttonlvl9.setAlpha(1f);
             buttonlvl9.setEnabled(true);
         }
-        if(HomeActivity.sharedPreferences.getBoolean("level 10 state", false) == false) {
+        if (HomeActivity.sharedPreferences.getBoolean("level 10 state", false) == false) {
             buttonlvl10.setAlpha(0.5f);
             buttonlvl10.setEnabled(false);
         } else {
@@ -167,4 +167,5 @@ public class LevelsActivity extends AppCompatActivity {
         finish();
 
     }
+
 }

@@ -28,7 +28,7 @@ public class GameOver extends AppCompatActivity {
     public void back(View view) {
         Intent goToHome = new Intent(GameOver.this, HomeActivity.class);
         finish();
-        if(LevelsActivity.levelsActivity != null) {
+        if (LevelsActivity.levelsActivity != null) {
             LevelsActivity.levelsActivity.finish();
         }
     }
@@ -45,13 +45,13 @@ public class GameOver extends AppCompatActivity {
 
         Intent goToNextLevel;
 
-        if(nextLvl == 0) {
+        if (nextLvl == 0) {
 
             buttonNextLevel.setVisibility(View.INVISIBLE);
 
         }
 
-        if(nextLvl == 2) {
+        if (nextLvl == 2) {
 
             goToNextLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToNextLevel.putExtra("Button", "2");
@@ -61,7 +61,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 3) {
+        if (nextLvl == 3) {
 
             goToNextLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToNextLevel.putExtra("Button", "3");
@@ -71,7 +71,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 4) {
+        if (nextLvl == 4) {
 
             goToNextLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToNextLevel.putExtra("Button", "4");
@@ -81,7 +81,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 5) {
+        if (nextLvl == 5) {
 
             goToNextLevel = new Intent(getApplicationContext(), level5.class);
             startActivity(goToNextLevel);
@@ -89,7 +89,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 6) {
+        if (nextLvl == 6) {
 
             goToNextLevel = new Intent(getApplicationContext(), Level6Activity.class);
             startActivity(goToNextLevel);
@@ -97,7 +97,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 7) {
+        if (nextLvl == 7) {
 
             goToNextLevel = new Intent(getApplicationContext(), Level7Activity.class);
             startActivity(goToNextLevel);
@@ -105,7 +105,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 8) {
+        if (nextLvl == 8) {
 
             goToNextLevel = new Intent(getApplicationContext(), Level8Activity.class);
             startActivity(goToNextLevel);
@@ -113,7 +113,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 9) {
+        if (nextLvl == 9) {
 
             goToNextLevel = new Intent(getApplicationContext(), Level9Activity.class);
             startActivity(goToNextLevel);
@@ -121,7 +121,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(nextLvl == 10) {
+        if (nextLvl == 10) {
 
             goToNextLevel = new Intent(getApplicationContext(), Level10Activity.class);
             startActivity(goToNextLevel);
@@ -137,7 +137,7 @@ public class GameOver extends AppCompatActivity {
 
         int currentLevel = intent.getIntExtra("Current Level", 1);
 
-        if(currentLevel == 1) {
+        if (currentLevel == 1) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToCurrentLevel.putExtra("Button", "1");
@@ -147,7 +147,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 2) {
+        if (currentLevel == 2) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToCurrentLevel.putExtra("Button", "2");
@@ -157,7 +157,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 3) {
+        if (currentLevel == 3) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToCurrentLevel.putExtra("Button", "3");
@@ -167,7 +167,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 4) {
+        if (currentLevel == 4) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), randomLevel.class);
             goToCurrentLevel.putExtra("Button", "4");
@@ -177,7 +177,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 5) {
+        if (currentLevel == 5) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), level5.class);
             startActivity(goToCurrentLevel);
@@ -185,7 +185,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 6) {
+        if (currentLevel == 6) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), Level6Activity.class);
             startActivity(goToCurrentLevel);
@@ -193,7 +193,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 7) {
+        if (currentLevel == 7) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), Level7Activity.class);
             startActivity(goToCurrentLevel);
@@ -201,7 +201,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 8) {
+        if (currentLevel == 8) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), Level8Activity.class);
             startActivity(goToCurrentLevel);
@@ -209,7 +209,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 9) {
+        if (currentLevel == 9) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), Level9Activity.class);
             startActivity(goToCurrentLevel);
@@ -217,7 +217,7 @@ public class GameOver extends AppCompatActivity {
 
         }
 
-        if(currentLevel == 10) {
+        if (currentLevel == 10) {
 
             goToCurrentLevel = new Intent(getApplicationContext(), Level10Activity.class);
             startActivity(goToCurrentLevel);
@@ -242,22 +242,19 @@ public class GameOver extends AppCompatActivity {
 
         int nextLvl = intent.getIntExtra("Next Level", 1);
 
-        if(nextLvl == 0) {
+        if (nextLvl == 0) {
 
             buttonNextLevel.setVisibility(View.INVISIBLE);
 
         }
 
-        Boolean userWon = intent.getBooleanExtra("User Won" , false);
+        Boolean userWon = intent.getBooleanExtra("User Won", false);
         result = (ImageView) findViewById(R.id.result);
-        if(userWon==true)
-        {
+        if (userWon == true) {
             result.setImageDrawable(getResources().getDrawable(R.drawable.youwin));
             buttonNextLevel.setAlpha(1f);
             buttonNextLevel.setClickable(true);
-        }
-        else
-        {
+        } else {
             result.setImageDrawable(getResources().getDrawable(R.drawable.youlose));
             buttonNextLevel.setClickable(false);
             buttonNextLevel.setAlpha(0.5f);
@@ -266,7 +263,7 @@ public class GameOver extends AppCompatActivity {
 
         boolean timeUp = intent.getBooleanExtra("Time Up", false);
 
-        if(timeUp == true) {
+        if (timeUp == true) {
 
             result.setImageDrawable(getResources().getDrawable(R.drawable.youareslow));
             buttonNextLevel.setClickable(false);
@@ -275,4 +272,5 @@ public class GameOver extends AppCompatActivity {
         }
 
     }
+
 }

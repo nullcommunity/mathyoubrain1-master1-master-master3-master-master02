@@ -25,8 +25,8 @@ import java.util.Random;
 
 public class Level8Activity extends AppCompatActivity {
 
-    TextView textViewQuestion,textViewTimer,textViewScore;
-    Button button1,button2,button3,button4,buttonPlayAgain,buttonNextLevel;
+    TextView textViewQuestion, textViewTimer, textViewScore;
+    Button button1, button2, button3, button4, buttonPlayAgain, buttonNextLevel;
     CountDownTimer countDownTimer;
     RelativeLayout relativeLayout;
 
@@ -43,8 +43,8 @@ public class Level8Activity extends AppCompatActivity {
     AnimatorSet front_anim;
     AnimatorSet back_anim;
     ImageView flipbtn;
-    Boolean isFront=true;
-    int number1,number2,answer,correctAnswer,wrongAnswer1,wrongAnswer2,wrongAnswer3,questionNumber=0,score=0,operation;
+    Boolean isFront = true;
+    int number1, number2, answer, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, questionNumber = 0, score = 0, operation;
     boolean display = true;
 
     Intent goToGameOver;
@@ -57,38 +57,39 @@ public class Level8Activity extends AppCompatActivity {
 
     boolean exit = false;
     Dialog dialog;
-    Button levelExitYes , levelExitNo;
+    Button levelExitYes, levelExitNo;
+
     public void questionManager() {
 
         Random rand = new Random();
 
-        if(questionNumber < 5) {
+        if (questionNumber < 5) {
 
             questionNumber = questionNumber + 1;
-            Log.i("Question Number", questionNumber+"");
+            Log.i("Question Number", questionNumber + "");
             correctAnswer = rand.nextInt(4) + 1;
-            Log.i("Correct Answer", correctAnswer+"");
-            if(questionNumber == 1) {
+            Log.i("Correct Answer", correctAnswer + "");
+            if (questionNumber == 1) {
                 textViewQuestion.setText(question1);
-                if(correctAnswer == 1) {
+                if (correctAnswer == 1) {
                     button1.setText(answer1);
                     button2.setText("-8");
                     button3.setText("-6");
                     button4.setText("-9");
                 }
-                if(correctAnswer == 2) {
+                if (correctAnswer == 2) {
                     button2.setText(answer1);
                     button1.setText("-8");
                     button3.setText("-6");
                     button4.setText("-9");
                 }
-                if(correctAnswer == 3) {
+                if (correctAnswer == 3) {
                     button3.setText(answer1);
                     button1.setText("-8");
                     button2.setText("-6");
                     button4.setText("-9");
                 }
-                if(correctAnswer == 4) {
+                if (correctAnswer == 4) {
                     button4.setText(answer1);
                     button1.setText("-8");
                     button2.setText("-6");
@@ -97,27 +98,27 @@ public class Level8Activity extends AppCompatActivity {
                 Log.i("Answer", answer1 + " Position: " + correctAnswer);
             }
 
-            if(questionNumber == 2) {
+            if (questionNumber == 2) {
                 textViewQuestion.setText(question2);
-                if(correctAnswer == 1) {
+                if (correctAnswer == 1) {
                     button1.setText(answer2);
                     button2.setText("10");
                     button3.setText("12");
                     button4.setText("9");
                 }
-                if(correctAnswer == 2) {
+                if (correctAnswer == 2) {
                     button2.setText(answer2);
                     button1.setText("10");
                     button3.setText("12");
                     button4.setText("9");
                 }
-                if(correctAnswer == 3) {
+                if (correctAnswer == 3) {
                     button3.setText(answer2);
                     button1.setText("10");
                     button2.setText("12");
                     button4.setText("9");
                 }
-                if(correctAnswer == 4) {
+                if (correctAnswer == 4) {
                     button4.setText(answer2);
                     button1.setText("10");
                     button2.setText("12");
@@ -126,27 +127,27 @@ public class Level8Activity extends AppCompatActivity {
                 Log.i("Answer", answer2 + " Position: " + correctAnswer);
             }
 
-            if(questionNumber == 3) {
+            if (questionNumber == 3) {
                 textViewQuestion.setText(question3);
-                if(correctAnswer == 1) {
+                if (correctAnswer == 1) {
                     button1.setText(answer3);
                     button2.setText("48");
                     button3.setText("42");
                     button4.setText("39");
                 }
-                if(correctAnswer == 2) {
+                if (correctAnswer == 2) {
                     button2.setText(answer3);
                     button1.setText("48");
                     button3.setText("42");
                     button4.setText("39");
                 }
-                if(correctAnswer == 3) {
+                if (correctAnswer == 3) {
                     button3.setText(answer3);
                     button1.setText("48");
                     button2.setText("42");
                     button4.setText("39");
                 }
-                if(correctAnswer == 4) {
+                if (correctAnswer == 4) {
                     button4.setText(answer3);
                     button1.setText("48");
                     button2.setText("42");
@@ -155,27 +156,27 @@ public class Level8Activity extends AppCompatActivity {
                 Log.i("Answer", answer3 + " Position: " + correctAnswer);
             }
 
-            if(questionNumber == 4) {
+            if (questionNumber == 4) {
                 textViewQuestion.setText(question4);
-                if(correctAnswer == 1) {
+                if (correctAnswer == 1) {
                     button1.setText(answer4);
                     button2.setText("6");
                     button3.setText("7");
                     button4.setText("4");
                 }
-                if(correctAnswer == 2) {
+                if (correctAnswer == 2) {
                     button2.setText(answer4);
                     button1.setText("6");
                     button3.setText("7");
                     button4.setText("4");
                 }
-                if(correctAnswer == 3) {
+                if (correctAnswer == 3) {
                     button3.setText(answer4);
                     button1.setText("6");
                     button2.setText("7");
                     button4.setText("4");
                 }
-                if(correctAnswer == 4) {
+                if (correctAnswer == 4) {
                     button4.setText(answer4);
                     button1.setText("6");
                     button2.setText("7");
@@ -184,27 +185,27 @@ public class Level8Activity extends AppCompatActivity {
                 Log.i("Answer", answer4 + " Position: " + correctAnswer);
             }
 
-            if(questionNumber == 5) {
+            if (questionNumber == 5) {
                 textViewQuestion.setText(question5);
-                if(correctAnswer == 1) {
+                if (correctAnswer == 1) {
                     button1.setText(answer5);
                     button2.setText("27/2");
                     button3.setText("-2/27");
                     button4.setText("3/26");
                 }
-                if(correctAnswer == 2) {
+                if (correctAnswer == 2) {
                     button2.setText(answer5);
                     button1.setText("27/2");
                     button3.setText("-2/27");
                     button4.setText("3/26");
                 }
-                if(correctAnswer == 3) {
+                if (correctAnswer == 3) {
                     button3.setText(answer5);
                     button1.setText("27/2");
                     button2.setText("-2/27");
                     button4.setText("3/26");
                 }
-                if(correctAnswer == 4) {
+                if (correctAnswer == 4) {
                     button4.setText(answer5);
                     button1.setText("27/2");
                     button2.setText("-2/27");
@@ -218,21 +219,19 @@ public class Level8Activity extends AppCompatActivity {
 
     }
 
-    public void timer()
-    {
+    public void timer() {
 
-        countDownTimer = new CountDownTimer(45000 + 100,1000)
-        {
+        countDownTimer = new CountDownTimer(45000 + 100, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
-                if(questionNumber <= 5) {
+                if (questionNumber <= 5) {
                     display = true;
                 } else {
                     display = false;
                     countDownTimer.cancel();
                 }
-                textViewTimer.setText((millisUntilFinished/1000)+"s");
+                textViewTimer.setText((millisUntilFinished / 1000) + "s");
 
             }
 
@@ -241,10 +240,10 @@ public class Level8Activity extends AppCompatActivity {
 
                 onTimerFinished = true;
 
-                display=false;
+                display = false;
                 // Time's Up!
 
-                if(onActivityPaused == false && onTimerFinished == true) {
+                if (onActivityPaused == false && onTimerFinished == true) {
                     if (score < 5) {
                         goToGameOver.putExtra("User won", false);
                     } else if (score == 5) {
@@ -261,7 +260,7 @@ public class Level8Activity extends AppCompatActivity {
 
         }.start();
 
-        if(display==true) {
+        if (display == true) {
             questionManager();
         }
     }
@@ -284,7 +283,7 @@ public class Level8Activity extends AppCompatActivity {
                     display = false;
                     countDownTimer.cancel();
 
-                    if(HomeActivity.sharedPreferences.getInt("active level", 1) < 9)
+                    if (HomeActivity.sharedPreferences.getInt("active level", 1) < 9)
                         HomeActivity.sharedPreferences.edit().putInt("active level", 9).apply();
                     HomeActivity.sharedPreferences.edit().putBoolean("level 9 state", true).apply();
 
@@ -299,7 +298,7 @@ public class Level8Activity extends AppCompatActivity {
 
                 imageViewResult.setImageResource(R.drawable.wronganswer);
             }
-            if(score < 5 && questionNumber == 5){
+            if (score < 5 && questionNumber == 5) {
                 Log.i("Info", "if entered");
                 questionNumber = questionNumber + 1;
                 display = false;
@@ -322,8 +321,8 @@ public class Level8Activity extends AppCompatActivity {
     public void playAgain(View view) {
 
         display = true;
-        questionNumber=0;
-        score=0;
+        questionNumber = 0;
+        score = 0;
         textViewScore.setText(score + "/5");
         timer();
         relativeLayout.animate().translationXBy(1000).setDuration(0);
@@ -335,8 +334,8 @@ public class Level8Activity extends AppCompatActivity {
         Toast.makeText(this, "Next Level Tapped!", Toast.LENGTH_SHORT).show();
 
         display = true;
-        questionNumber=0;
-        score=0;
+        questionNumber = 0;
+        score = 0;
         textViewScore.setText(score + "/5");
 
         Intent intent = new Intent(getApplicationContext(), Level9Activity.class);
@@ -382,18 +381,17 @@ public class Level8Activity extends AppCompatActivity {
         final GridLayout card_front = (GridLayout) findViewById(R.id.front_card);
         final ImageView card_back = (ImageView) findViewById(R.id.back_card);
         final TextView textView = (TextView) findViewById(R.id.textView);
-        card_front.setCameraDistance(8000*scale);
-        card_back.setCameraDistance(8000*scale);
+        card_front.setCameraDistance(8000 * scale);
+        card_back.setCameraDistance(8000 * scale);
 
-        front_anim =(AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext() , R.animator.front_animation) ;
-        back_anim =(AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext() , R.animator.back_animation) ;
+        front_anim = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.front_animation);
+        back_anim = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.back_animation);
         flipbtn = (ImageView) findViewById(R.id.flipbtn);
         flipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(isFront)
-                {
+                if (isFront) {
                     flipbtn.setImageResource(R.drawable.lightbulb);
                     front_anim.setTarget(card_front);
                     back_anim.setTarget(card_back);
@@ -405,9 +403,8 @@ public class Level8Activity extends AppCompatActivity {
                     button2.setClickable(false);
                     button3.setClickable(false);
                     button4.setClickable(false);
-                    isFront=false;
-                }
-                else {
+                    isFront = false;
+                } else {
                     flipbtn.setImageResource(R.drawable.bulb);
                     front_anim.setTarget(card_back);
                     back_anim.setTarget(card_front);
@@ -418,7 +415,7 @@ public class Level8Activity extends AppCompatActivity {
                     button2.setClickable(true);
                     button3.setClickable(true);
                     button4.setClickable(true);
-                    isFront=true;
+                    isFront = true;
                 }
             }
         });
@@ -438,8 +435,8 @@ public class Level8Activity extends AppCompatActivity {
                 exit = true;
                 countDownTimer.cancel();
                 display = true;
-                questionNumber=0;
-                score=0;
+                questionNumber = 0;
+                score = 0;
                 onBackPressed();
             }
         });
@@ -475,7 +472,7 @@ public class Level8Activity extends AppCompatActivity {
 
         Log.i("Resumed", "User opened app");
 
-        if(onActivityPaused == true && onTimerFinished == true) {
+        if (onActivityPaused == true && onTimerFinished == true) {
 
             onActivityPaused = false;
 

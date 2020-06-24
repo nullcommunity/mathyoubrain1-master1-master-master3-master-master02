@@ -25,8 +25,8 @@ import java.util.Random;
 
 public class Level9Activity extends AppCompatActivity {
 
-    Button button1,button2,button3,button4;
-    TextView textViewTimer,textViewScore,textViewQuestion;
+    Button button1, button2, button3, button4;
+    TextView textViewTimer, textViewScore, textViewQuestion;
     ImageView imageView;
     CountDownTimer countDownTimer;
     RelativeLayout relativeLayout;
@@ -56,9 +56,9 @@ public class Level9Activity extends AppCompatActivity {
     AnimatorSet front_anim;
     AnimatorSet back_anim;
     ImageView flipbtn;
-    Boolean isFront=true;
+    Boolean isFront = true;
 
-    int number1,number2,answer,correctAnswer,wrongAnswer1,wrongAnswer2,wrongAnswer3,questionNumber=0,score=0,operation;
+    int number1, number2, answer, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, questionNumber = 0, score = 0, operation;
     boolean display = true;
 
     Intent goToGameOver;
@@ -71,7 +71,8 @@ public class Level9Activity extends AppCompatActivity {
 
     boolean exit = false;
     Dialog dialog;
-    Button levelExitYes , levelExitNo;
+    Button levelExitYes, levelExitNo;
+
     public void questionManager() {
 
         Random rand = new Random();
@@ -378,21 +379,19 @@ public class Level9Activity extends AppCompatActivity {
 
     }
 
-    public void timer()
-    {
+    public void timer() {
 
-        countDownTimer = new CountDownTimer(60000 + 100,1000)
-        {
+        countDownTimer = new CountDownTimer(60000 + 100, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
-                if(questionNumber <= 10) {
+                if (questionNumber <= 10) {
                     display = true;
                 } else {
                     display = false;
                     countDownTimer.cancel();
                 }
-                textViewTimer.setText((millisUntilFinished/1000)+"s");
+                textViewTimer.setText((millisUntilFinished / 1000) + "s");
 
             }
 
@@ -401,11 +400,11 @@ public class Level9Activity extends AppCompatActivity {
 
                 onTimerFinished = true;
 
-                display=false;
+                display = false;
                 textViewTimer.setText("0s");
                 // Time's Up!
 
-                if(onActivityPaused == false && onTimerFinished == true) {
+                if (onActivityPaused == false && onTimerFinished == true) {
                     if (score < 10) {
                         goToGameOver.putExtra("User won", false);
                     } else if (score == 10) {
@@ -422,7 +421,7 @@ public class Level9Activity extends AppCompatActivity {
 
         }.start();
 
-        if(display==true) {
+        if (display == true) {
             questionManager();
         }
     }
@@ -446,7 +445,7 @@ public class Level9Activity extends AppCompatActivity {
                     countDownTimer.cancel();
                     // Level Completed!
 
-                    if(HomeActivity.sharedPreferences.getInt("active level", 1) < 10)
+                    if (HomeActivity.sharedPreferences.getInt("active level", 1) < 10)
                         HomeActivity.sharedPreferences.edit().putInt("active level", 10).apply();
                     HomeActivity.sharedPreferences.edit().putBoolean("level 10 state", true).apply();
 
@@ -461,7 +460,7 @@ public class Level9Activity extends AppCompatActivity {
 
                 imageViewResult.setImageResource(R.drawable.wronganswer);
             }
-            if(score < 10 && questionNumber == 10){
+            if (score < 10 && questionNumber == 10) {
                 Log.i("Info", "if entered");
                 questionNumber = questionNumber + 1;
                 display = false;
@@ -484,8 +483,8 @@ public class Level9Activity extends AppCompatActivity {
     public void playAgain(View view) {
 
         display = true;
-        questionNumber=0;
-        score=0;
+        questionNumber = 0;
+        score = 0;
         textViewScore.setText(score + "/10");
         timer();
         relativeLayout.animate().translationXBy(1000).setDuration(0);
@@ -497,8 +496,8 @@ public class Level9Activity extends AppCompatActivity {
         Toast.makeText(this, "Next Level Tapped!", Toast.LENGTH_SHORT).show();
 
         display = true;
-        questionNumber=0;
-        score=0;
+        questionNumber = 0;
+        score = 0;
         textViewScore.setText(score + "/10");
 
         Intent intent = new Intent(getApplicationContext(), Level10Activity.class);
@@ -545,18 +544,17 @@ public class Level9Activity extends AppCompatActivity {
         final GridLayout card_front = (GridLayout) findViewById(R.id.front_card);
         final ImageView card_back = (ImageView) findViewById(R.id.back_card);
         final TextView textView = (TextView) findViewById(R.id.textView);
-        card_front.setCameraDistance(8000*scale);
-        card_back.setCameraDistance(8000*scale);
+        card_front.setCameraDistance(8000 * scale);
+        card_back.setCameraDistance(8000 * scale);
 
-        front_anim =(AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext() , R.animator.front_animation) ;
-        back_anim =(AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext() , R.animator.back_animation) ;
+        front_anim = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.front_animation);
+        back_anim = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.back_animation);
         flipbtn = (ImageView) findViewById(R.id.flipbtn);
         flipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(isFront)
-                {
+                if (isFront) {
                     flipbtn.setImageResource(R.drawable.lightbulb);
                     front_anim.setTarget(card_front);
                     back_anim.setTarget(card_back);
@@ -568,9 +566,8 @@ public class Level9Activity extends AppCompatActivity {
                     button2.setClickable(false);
                     button3.setClickable(false);
                     button4.setClickable(false);
-                    isFront=false;
-                }
-                else {
+                    isFront = false;
+                } else {
                     flipbtn.setImageResource(R.drawable.bulb);
                     front_anim.setTarget(card_back);
                     back_anim.setTarget(card_front);
@@ -581,7 +578,7 @@ public class Level9Activity extends AppCompatActivity {
                     button2.setClickable(true);
                     button3.setClickable(true);
                     button4.setClickable(true);
-                    isFront=true;
+                    isFront = true;
                 }
             }
         });
@@ -602,8 +599,8 @@ public class Level9Activity extends AppCompatActivity {
                 exit = true;
                 countDownTimer.cancel();
                 display = true;
-                questionNumber=0;
-                score=0;
+                questionNumber = 0;
+                score = 0;
                 onBackPressed();
             }
         });
@@ -639,7 +636,7 @@ public class Level9Activity extends AppCompatActivity {
 
         Log.i("Resumed", "User opened app");
 
-        if(onActivityPaused == true && onTimerFinished == true) {
+        if (onActivityPaused == true && onTimerFinished == true) {
 
             onActivityPaused = false;
 
