@@ -9,10 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-/*
-   Level 1 se 4 tak mein upar  kaa naam likh dena
-   TextView maine laga diya hai
- */
+
 public class LevelsActivity extends AppCompatActivity {
     Intent intent;
     static int level = 0;

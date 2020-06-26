@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button buttonPlay,buttonLevels,buttonFacts;
+    Button buttonPlay, buttonLevels, buttonFacts, buttonInfo;
 
     static SharedPreferences sharedPreferences;
 
@@ -30,8 +30,8 @@ public class HomeActivity extends AppCompatActivity {
 
     boolean exit = false;
 
-    Dialog dialog;
-    Button HomeExitYes , HomeExitNo;
+    Dialog dialog, infoDialog;
+    Button HomeExitYes, HomeExitNo;
 
     static ImageView imageViewBox;
 
@@ -39,9 +39,11 @@ public class HomeActivity extends AppCompatActivity {
 
     boolean isPlayClicked = false, isLevelsClicked = false, isFactsClicked = false;
 
+    ImageView infoClose;
+
     public void startGame(View view) {
 
-        if(isPlayClicked == false) {
+        if (isPlayClicked == false) {
 
             isPlayClicked = true;
 
@@ -104,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void goToLevels(View view) {
 
-        if(isLevelsClicked == false) {
+        if (isLevelsClicked == false) {
 
             isLevelsClicked = true;
 
@@ -134,14 +136,20 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    public void sendNotification() {
+    public void openInfo(View view) {
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.applogo)
-                .setContentTitle("Are you daring enough to play this game, LOSER")
-                .setContentText("If you are, open the app to play!");
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(001,mBuilder.build());
+        infoDialog.setContentView(R.layout.info_card);
+        infoClose = (ImageView) infoDialog.findViewById(R.id.closeButton);
+
+        infoClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                infoDialog.dismiss();
+            }
+        });
+
+        infoDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        infoDialog.show();
 
     }
 
@@ -153,6 +161,7 @@ public class HomeActivity extends AppCompatActivity {
         buttonPlay = (Button) findViewById(R.id.buttonPlay);
         buttonLevels = (Button) findViewById(R.id.buttonLevels);
         buttonFacts = (Button) findViewById(R.id.buttonFacts);
+        buttonInfo = (Button) findViewById(R.id.buttonInfo);
 
         imageViewBox = (ImageView) findViewById(R.id.imageView3);
 
@@ -168,9 +177,11 @@ public class HomeActivity extends AppCompatActivity {
 
         dialog = new Dialog(this);
 
+        infoDialog = new Dialog(this);
+
         isGameComplete = sharedPreferences.getBoolean("is game complete", false);
 
-        if(isGameComplete == true) {
+        if (isGameComplete == true) {
 
             imageViewBox.setImageResource(R.drawable.congratsbox);
 
@@ -192,7 +203,7 @@ public class HomeActivity extends AppCompatActivity {
 
         isGameComplete = sharedPreferences.getBoolean("is game complete", false);
 
-        if(isGameComplete == true) {
+        if (isGameComplete == true) {
 
             imageViewBox.setImageResource(R.drawable.congratsbox);
 
@@ -208,13 +219,13 @@ public class HomeActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         dialog.setContentView(R.layout.home_exit);
-        HomeExitYes  = (Button) dialog.findViewById(R.id.yes);
+        HomeExitYes = (Button) dialog.findViewById(R.id.yes);
         HomeExitNo = (Button) dialog.findViewById(R.id.no);
         HomeExitYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               exit = true;
-               onBackPressed();
+                exit = true;
+                onBackPressed();
             }
         });
         HomeExitNo.setOnClickListener(new View.OnClickListener() {
@@ -228,9 +239,10 @@ public class HomeActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
-        if(exit == true) {
+        if (exit == true) {
             super.onBackPressed();
         }
 
     }
+
 }

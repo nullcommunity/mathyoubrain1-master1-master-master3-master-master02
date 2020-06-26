@@ -70,8 +70,8 @@
 
     <GridLayout
         android:id="@+id/front_card"
-        android:layout_width="212dp"
-        android:layout_height="218dp"
+        android:layout_width="215dp"
+        android:layout_height="215dp"
         android:layout_marginTop="72dp"
         android:alpha="1"
         app:layout_constraintEnd_toEndOf="parent"
