@@ -300,7 +300,14 @@ public class randomLevel extends AppCompatActivity {
          Levels 2 to 4 = 45s
      */
 
-        timer = new CountDownTimer(30000 + 200, 1000) {
+    int timeLimit = 0;
+
+    if(LevelsActivity.level == 1)
+        timeLimit = 30000;
+    else if(LevelsActivity.level > 1 && LevelsActivity.level < 5)
+        timeLimit = 45000;
+
+        timer = new CountDownTimer(timeLimit + 200, 1000) {
             @Override
             public void onTick(long l) {
                 timerText.setText((l / 1000) + "s");

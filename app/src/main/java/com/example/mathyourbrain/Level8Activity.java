@@ -476,9 +476,9 @@ public class Level8Activity extends AppCompatActivity {
 
             onActivityPaused = false;
 
-            if (score < 6) {
+            if (score < 5) {
                 goToGameOver.putExtra("User Won", false);
-            } else if (score == 6) {
+            } else if (score == 5) {
                 goToGameOver.putExtra("User Won", true);
             }
             goToGameOver.putExtra("Current Level", 8);

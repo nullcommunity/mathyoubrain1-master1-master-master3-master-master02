@@ -640,9 +640,9 @@ public class Level9Activity extends AppCompatActivity {
 
             onActivityPaused = false;
 
-            if (score < 6) {
+            if (score < 10) {
                 goToGameOver.putExtra("User Won", false);
-            } else if (score == 6) {
+            } else if (score == 10) {
                 goToGameOver.putExtra("User Won", true);
             }
             goToGameOver.putExtra("Current Level", 9);
